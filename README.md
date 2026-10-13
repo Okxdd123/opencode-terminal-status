@@ -19,19 +19,19 @@ OpenCode v2 终端插件，对齐 iTerm2 官方 Claude Code 集成：终端标�
 
 ## 安装
 
-> `opencode plugin add github:…` 在 OpenCode v2.0.27 上实测失败
->（三种 Git 写法都报 `git dep preparation failed`，而同一地址裸 `bun add`
-> 正常），等上游修复前先手动装：
+```bash
+opencode plugin add github:Okxdd123/opencode-terminal-status
+```
+
+然后重启 TUI。tmux 透传已处理。
+
+> 手动兜底（`plugin add github:` 坏掉时用，比如 2.0.27–2.0.28 上
+> `package.json` 里有 `build` 脚本会触发 `git dep preparation failed`，
+> 本仓自 v1.0.1 起把脚本改名 `build:dist` 绕开）：
 
 ```bash
 git clone https://github.com/Okxdd123/opencode-terminal-status.git \
   ~/.config/opencode/plugins/opencode-terminal-status
-```
-
-然后重启 TUI。`plugins/<名>/` 目录会被自动发现；tmux 透传已处理。一行命令修好后即：
-
-```bash
-opencode plugin add github:Okxdd123/opencode-terminal-status
 ```
 
 > 不要和本地同款副本或 `opencode-terminal-progress` 同装：两个绘制者会打架。
@@ -88,21 +88,20 @@ tab; other projects on the same server never interfere.
 
 ## Install
 
-> `opencode plugin add github:…` currently fails on OpenCode v2.0.27
-> (`git dep preparation failed` for every Git form; plain `bun add` of the
-> same repo works). Until upstream fixes it, install manually:
+```bash
+opencode plugin add github:Okxdd123/opencode-terminal-status
+```
+
+Then restart the TUI. tmux passthrough is handled transparently.
+
+> Manual fallback (also what to do while `plugin add github:` is broken,
+> as on 2.0.27–2.0.28 where a `build` script in `package.json` trips
+> `git dep preparation failed` — fixed here since v1.0.1 by shipping the
+> script as `build:dist`):
 
 ```bash
 git clone https://github.com/Okxdd123/opencode-terminal-status.git \
   ~/.config/opencode/plugins/opencode-terminal-status
-```
-
-Then restart the TUI. The `plugins/<name>/` directory layout is
-auto-discovered; tmux passthrough is handled transparently. Once the
-one-liner works again it is:
-
-```bash
-opencode plugin add github:Okxdd123/opencode-terminal-status
 ```
 
 > Do not run this together with a local copy of the same plugin or with
