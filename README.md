@@ -19,11 +19,20 @@ OpenCode v2 终端插件，对齐 iTerm2 官方 Claude Code 集成：终端标�
 
 ## 安装
 
+> `opencode plugin add github:…` 在 OpenCode v2.0.27 上实测失败
+>（三种 Git 写法都报 `git dep preparation failed`，而同一地址裸 `bun add`
+> 正常），等上游修复前先手动装：
+
+```bash
+git clone https://github.com/Okxdd123/opencode-terminal-status.git \
+  ~/.config/opencode/plugins/opencode-terminal-status
+```
+
+然后重启 TUI。`plugins/<名>/` 目录会被自动发现；tmux 透传已处理。一行命令修好后即：
+
 ```bash
 opencode plugin add github:Okxdd123/opencode-terminal-status
 ```
-
-然后重启 TUI。tmux 透传已处理。
 
 > 不要和本地同款副本或 `opencode-terminal-progress` 同装：两个绘制者会打架。
 
@@ -79,11 +88,22 @@ tab; other projects on the same server never interfere.
 
 ## Install
 
+> `opencode plugin add github:…` currently fails on OpenCode v2.0.27
+> (`git dep preparation failed` for every Git form; plain `bun add` of the
+> same repo works). Until upstream fixes it, install manually:
+
+```bash
+git clone https://github.com/Okxdd123/opencode-terminal-status.git \
+  ~/.config/opencode/plugins/opencode-terminal-status
+```
+
+Then restart the TUI. The `plugins/<name>/` directory layout is
+auto-discovered; tmux passthrough is handled transparently. Once the
+one-liner works again it is:
+
 ```bash
 opencode plugin add github:Okxdd123/opencode-terminal-status
 ```
-
-Then restart the TUI. tmux passthrough is handled transparently.
 
 > Do not run this together with a local copy of the same plugin or with
 > `opencode-terminal-progress`: two painters fight over one tab.
