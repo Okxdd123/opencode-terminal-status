@@ -1,0 +1,33 @@
+{
+  "name": "opencode-terminal-status",
+  "version": "1.0.0",
+  "description": "OpenCode CLI plugin: terminal tab progress bar plus iTerm2 session status, background-agent aware",
+  "author": "biubiu",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./tui": "./dist/tui.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts ./src/tui.ts --outdir ./dist --external @opencode/plugin --external @opencode/plugin/tui --external fs --external child_process"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Okxdd123/opencode-terminal-status.git"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "terminal",
+    "progress",
+    "iterm2",
+    "session-status"
+  ]
+}
