@@ -51,7 +51,7 @@ opencode plugin add github:Okxdd123/opencode-terminal-status
 ## 开发
 
 ```bash
-bun run build   # -> dist/
+bun run build:dist   # -> dist/
 ```
 
 ## License
@@ -127,7 +127,7 @@ iTerm2 field.
 ## Develop
 
 ```bash
-bun run build   # -> dist/
+bun run build:dist   # -> dist/
 ```
 
 ## License

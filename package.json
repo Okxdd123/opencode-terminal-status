@@ -13,7 +13,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "bun build ./src/index.ts ./src/tui.ts --outdir ./dist --external @opencode/plugin --external @opencode/plugin/tui --external fs --external child_process"
+    "build:dist": "bun build ./src/index.ts ./src/tui.ts --outdir ./dist --external @opencode/plugin --external @opencode/plugin/tui --external fs --external child_process"
   },
   "peerDependencies": {
     "@opencode/plugin": "^2.0.0"
